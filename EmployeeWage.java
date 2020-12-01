@@ -9,6 +9,11 @@ public class EmployeeWage {
 		int Full_TIME_HOUR = 8;
 		int PART_TIME_HOUR = 4;
 		int RATE_PER_HOUR = 20;
+
+		int empHours = 0;
+
+		int IS_FULL_TIME = 1;
+		int IS_PART_TIME = 0;
 		// print welcome message
 		System.out.println("Welcome to The Employee Wage System");
 		// create instance of Random class
@@ -22,11 +27,23 @@ public class EmployeeWage {
 			System.out.println("Employee is Present");
 		}
 
-		int salary = RATE_PER_HOUR * Full_TIME_HOUR;
-		System.out.println("Salary for the Full Time Employee is " + salary);
+		int timeCheck = rand.nextInt(2);
 
-		int partTimeSalary = RATE_PER_HOUR * PART_TIME_HOUR;
-		System.out.println("Salary for the part Time Employee is " + partTimeSalary);
+		switch (timeCheck) {
+		case 1:
+			System.out.println("Employee works for Full Time, so ");
+			empHours = 8;
+			break;
+		case 0:
+			System.out.println("Employee works for Part Time so ");
+			empHours = 4;
+			break;
+		default:
+			System.out.println("Employee Unidentified");
+		}
+
+		int salary = empHours * RATE_PER_HOUR;
+		System.out.println("His Salary is : " + salary);
 
 	}
 
