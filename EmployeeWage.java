@@ -10,6 +10,8 @@ public class EmployeeWage {
 		int PART_TIME_HOUR = 4;
 		int RATE_PER_HOUR = 20;
 
+		int WORK_DAYS_PER_MONTH = 20;
+
 		int empHours = 0;
 
 		int IS_FULL_TIME = 1;
@@ -42,8 +44,10 @@ public class EmployeeWage {
 			System.out.println("Employee Unidentified");
 		}
 
-		int salary = empHours * RATE_PER_HOUR;
-		System.out.println("His Salary is : " + salary);
+		int dailyWage = empHours * RATE_PER_HOUR;
+		System.out.println("His Daily Wage is : " + dailyWage);
+		int monthlyWage = dailyWage * WORK_DAYS_PER_MONTH;
+		System.out.println("His Monthly Wage is : " + monthlyWage);
 
 	}
 
