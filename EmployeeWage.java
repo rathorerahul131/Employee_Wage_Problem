@@ -5,9 +5,15 @@ import java.util.Random;
 
 public class EmployeeWage {
 
+	public void monthlyWage(int totalWorkHours, int rate) {
+
+		int salary = totalWorkHours * rate;
+		System.out.println("The total monthly Wage is " + salary);
+
+	}
+
 	public static void main(String[] args) {
-		int Full_TIME_HOUR = 8;
-		int PART_TIME_HOUR = 4;
+
 		int RATE_PER_HOUR = 20;
 
 		int MAX_WORKDAYS_PER_MONTH = 20;
@@ -44,7 +50,7 @@ public class EmployeeWage {
 		default:
 			System.out.println("Employee Unidentified");
 		}
-		//Loop till total hours reach 100 or workDays reach 20
+		// Loop till total hours reach 100 or workDays reach 20
 		while (totalWorkHours <= MAX_WORKHOURS_IN_MONTH && totalWorkDays <= MAX_WORKDAYS_PER_MONTH) {
 			switch (empCheck) {
 			case 1:
@@ -58,11 +64,12 @@ public class EmployeeWage {
 			}
 			totalWorkDays++;
 			totalWorkHours += empHours;
-			
+
 		}
-		
-		int monthlyWage = totalWorkHours * RATE_PER_HOUR;
-		System.out.println("Salary is :" + monthlyWage);
+
+		EmployeeWage salary = new EmployeeWage();
+		salary.monthlyWage(totalWorkHours, RATE_PER_HOUR);
+
 	}
 
 }
